@@ -1,5 +1,10 @@
 # 🚀 Crypto Data Pipeline (Modern Data Stack)
 
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791.svg)](https://www.postgresql.org/)
+[![dbt](https://img.shields.io/badge/dbt-Core-FF694B.svg)](https://www.getdbt.com/)
+[![Prefect](https://img.shields.io/badge/Prefect-2.10+-0D083F.svg)](https://www.prefect.io/)
+
 An end-to-end, production-grade batch data pipeline that extracts live cryptocurrency market data, loads it into a relational database, transforms it using SQL, enforces data quality, and orchestrates the entire workflow.
 
 ## 🏗️ Architecture
@@ -57,16 +62,8 @@ docker run --name crypto-postgres \
   -p 5432:5432 \
   -d postgres:15
 
-3. Setup Python Environment
-# Create and activate virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-4. Setup dbt
-# Install dbt postgres adapter
+  4. Setup dbt
+  # Install dbt postgres adapter
 pip install dbt-postgres
 
 # Verify connection to the Docker database
@@ -76,7 +73,6 @@ cd ..
 
 5. Run the Orchestrated Pipeline
 Execute the entire pipeline (Extract → Load → Transform → Test) in one command:
-
 python src/orchestration/run_pipeline.py
 
 🔍 Data Quality
@@ -84,3 +80,8 @@ This pipeline enforces strict data quality gates using dbt tests. Before any dat
 not_null on the usd price column.
 not_null on the fetch_timestamp audit column.
 If any of these tests fail, the Prefect orchestration flow will halt, preventing bad data from propagating downstream.
+
+🚀 Future Enhancements
+Cloud Deployment: Migrate the local PostgreSQL database to AWS RDS or GCP Cloud SQL, and run the Prefect agent on an EC2 instance or Kubernetes cluster.
+Incremental Models: Update the dbt stg_crypto_prices model to use materialized='incremental' to only process new records, reducing compute costs at scale.
+CI/CD Integration: Add GitHub Actions to automatically run dbt test and dbt run on every pull request to the main branch.
