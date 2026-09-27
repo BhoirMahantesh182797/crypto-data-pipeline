@@ -1,0 +1,33 @@
+[0m22:09:08.939536 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e0b580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092a7340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092a75e0>]}
+
+
+============================== 22:09:08.942743 | 948d2f80-a630-411c-89b3-168a984fd113 ==============================
+[0m22:09:08.942743 [info ] [MainThread]: Running with dbt=1.10.23
+[0m22:09:08.943122 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'write_json': 'True', 'version_check': 'True', 'target_path': 'None', 'profiles_dir': '/Users/mahanteshbhoir/.dbt', 'indirect_selection': 'eager', 'empty': 'None', 'warn_error': 'None', 'invocation_command': 'dbt init crypto_transform', 'use_colors': 'True', 'no_print': 'None', 'log_path': 'logs', 'static_parser': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'quiet': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'introspect': 'True'}
+[0m22:09:08.951482 [warn ] [MainThread]: [[33mWARNING[0m]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. Please upgrade to a newer supported version of dbt for new projects: https://docs.getdbt.com/docs/dbt-versions?utm_source=dbt-cli
+[0m22:09:08.951882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '948d2f80-a630-411c-89b3-168a984fd113', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10928f190>]}
+[0m22:09:08.952265 [info ] [MainThread]: Creating dbt configuration folder at /Users/mahanteshbhoir/.dbt
+[0m22:09:08.953649 [debug] [MainThread]: Starter project path: /Users/mahanteshbhoir/Desktop/Scaler/GitHub/crypto-pipeline/.venv/lib/python3.9/site-packages/dbt/include/starter_project
+[0m22:09:08.958581 [info ] [MainThread]: 
+Your new dbt project "crypto_transform" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:09:08.958844 [info ] [MainThread]: Setting up your profile.
+[0m22:13:30.191489 [info ] [MainThread]: Profile crypto_transform written to /Users/mahanteshbhoir/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:13:30.220016 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 261.30875, "process_in_blocks": "0", "process_kernel_time": 0.207378, "process_mem_max_rss": "102137856", "process_out_blocks": "0", "process_user_time": 1.001933}
+[0m22:13:30.221356 [debug] [MainThread]: Command `dbt init` succeeded at 22:13:30.221065 after 261.31 seconds
+[0m22:13:30.222515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e0b580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1091d2310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10928f190>]}
+[0m22:13:30.223601 [debug] [MainThread]: Flushing usage events
+[0m22:13:31.237055 [debug] [MainThread]: An error was encountered while trying to flush usage events

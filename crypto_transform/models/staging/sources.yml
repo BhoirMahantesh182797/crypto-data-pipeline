@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: crypto_raw
+    description: "Raw crypto data loaded by the Python extraction script"
+    database: crypto_db
+    schema: public
+    tables:
+      - name: raw_crypto_prices
+        description: "Raw price data with USD, 24h change, and fetch timestamp"
+        columns:
+          - name: usd
+            description: "The current price of the crypto asset in USD"
+            tests:
+              - not_null  # Ensures we never get a row with a missing price
+          
+          - name: fetch_timestamp
+            description: "The exact time the data was fetched from the API"
+            tests:
+              - not_null  # Ensures every row has an audit timestamp
