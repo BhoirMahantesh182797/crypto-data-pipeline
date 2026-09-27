@@ -8,10 +8,10 @@ This project follows modern Data Engineering best practices, separating concerns
 
 ```mermaid
 graph LR
-    A[🌐 CoinGecko API] -->|Python/Requests| B(Bronze: Raw PostgreSQL)
+    A[CoinGecko API] -->|Python Requests| B(Bronze: Raw PostgreSQL)
     B -->|dbt source| C(Silver: dbt Staging Model)
-    C -->|dbt test| D{✅ Data Quality Checks}
-    D -->|Prefect Flow| E[📊 Analytics Ready]
+    C -->|dbt test| D{Data Quality Checks}
+    D -->|Prefect Flow| E[Analytics Ready]
     
     style B fill:#e1e1e1,stroke:#333
     style C fill:#add8e6,stroke:#333
@@ -45,13 +45,11 @@ crypto-pipeline/
 🚀 How to Run Locally
 
 1. Prerequisites
-
 Install Docker Desktop and ensure it is running.
 Have Python 3.9+ installed.
 
 2. Setup the Database
 Spin up a local PostgreSQL container:
-
 docker run --name crypto-postgres \
   -e POSTGRES_USER=admin \
   -e POSTGRES_PASSWORD=password123 \
@@ -60,7 +58,6 @@ docker run --name crypto-postgres \
   -d postgres:15
 
 3. Setup Python Environment
-
 # Create and activate virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
